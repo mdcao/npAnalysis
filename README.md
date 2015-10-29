@@ -1,22 +1,24 @@
-#####################################################################################################
-Real-time identification of pathogen and antibiotic resistance with Oxford Nanopore MinION sequencing
-#####################################################################################################
 
+=======================================================
+Real-time analysis of Oxford Nanopore MinION sequencing
+=======================================================
 
 This directory contains information for setting up real-time analysis 
 of Oxford Nanopore sequencing data, as described in the under-review 
 manuscript:
 
-Real-time strain typing and analysis of antibiotic resistance potential using Nanopore MinION sequencing
-Authors: Minh Duc Cao, Devika Ganesamoorthy, Alysha G. Elliott, Huihui Zhang, Matthew A. Cooper and Lachlan Coin
+Real-time strain typing and analysis of antibiotic resistance potential using 
+Nanopore MinION sequencing
 
+Minh Duc Cao, Devika Ganesamoorthy, Alysha G. Elliott, Huihui Zhang, Matthew 
+A. Cooper and Lachlan Coin
 
-================================
+--------------------------------
 Software for pipeline setting up
-================================
+--------------------------------
 
-The streamline agorithms and auxiliary programs for setting up the
-pipeline are provided in japsa >= package 
+The streamline agorithms and auxiliary programs for setting up the pipeline 
+are provided in japsa >= package 
 
 
 In addition to the core of the pipeline provided in our japsa 
