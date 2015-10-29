@@ -1,7 +1,6 @@
 
-=======================================================
-Real-time analysis of Oxford Nanopore MinION sequencing
-=======================================================
+#Real-time analysis of Oxford Nanopore MinION sequencing
+
 
 This directory contains information for setting up real-time analysis 
 of Oxford Nanopore sequencing data, as described in the under-review 
@@ -13,9 +12,9 @@ Nanopore MinION sequencing
 Minh Duc Cao, Devika Ganesamoorthy, Alysha G. Elliott, Huihui Zhang, Matthew 
 A. Cooper and Lachlan Coin
 
---------------------------------
-Software for pipeline setting up
---------------------------------
+
+##Software for pipeline setting up
+
 
 The streamline agorithms and auxiliary programs for setting up the pipeline 
 are provided in japsa package (https://github.com/mdcao/japsa). In addition, the 
@@ -28,49 +27,29 @@ following free-software dependencies are required:
  5. HDF5 (https://hdfgroup.org/HDF5/release/obtain5.html)
  -- optional, needed for translating native fast5 files to fastq
 
-++++++++++++++++++++++++
-Quick installation guide
-++++++++++++++++++++++++
+
+###Quick installation guide
 
 
---------------------------------
-Setting up pipeline for 
---------------------------------
+##Setting up pipeline for 
 
-++++++++++++++++++++++
-Species identification
-++++++++++++++++++++++
+###Species identification
+
+###Strain typing with gene presence and absence
 
 
-++++++++++++++++++++++++++++++++++++++++++++
-Strain typing with gene presence and absence
-++++++++++++++++++++++++++++++++++++++++++++
+###Strain typing with MLST
 
 
-
-+++++++++++++++++++++++
-Strain typing with MLST
-+++++++++++++++++++++++
-
-
-++++++++++++++++++++++++++++++
-Resistance gene identification
-++++++++++++++++++++++++++++++
+###Resistance gene identification
 
 
 
+##Data
 
+##Putting together
 
-
-III. Data
-
-IV. Putting together
-
-
-V. Note
-
-
-VI. Contact
+##Contact
 
 Please contact Minh Duc Cao (minhduc.cao@gmail.com) for further information.
 
