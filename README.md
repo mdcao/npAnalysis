@@ -1,4 +1,6 @@
-# npAnalysis
+#####################################################################################################
+Real-time identification of pathogen and antibiotic resistance with Oxford Nanopore MinION sequencing
+#####################################################################################################
 
 
 This directory contains information for setting up real-time analysis 
