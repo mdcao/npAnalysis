@@ -28,10 +28,9 @@ free-software dependencies are required:
  5. HDF5 (https://hdfgroup.org/HDF5/release/obtain5.html)
  -- optional, needed for translating native fast5 files to fastq
 
-The Japsa package contains the implementations of the streamline algorithms 
-described in the paper, as well as the auxiliary programs for setting up the
-pipeline. Details documentation of these programs are provided in http://japsa.readthedocs.org/
-
+;;;;;;;;;;;;;;;;;;;;;;;;
+Quick installation guide
+;;;;;;;;;;;;;;;;;;;;;;;;
 
 II. Prepare 
 
