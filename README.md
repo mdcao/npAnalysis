@@ -28,6 +28,16 @@ following free-software dependencies are required:
 
 ###Quick installation guide
 
+::
+  git clone https://github.com/mdcao/japsa
+  cd japsa
+  make install \
+    [INSTALL_DIR=~/.usr/local \]
+    [MXMEM=7000m \]
+    [SERVER=true \]
+    [JLP=/usr/lib/jni:/usr/lib/R/site-library/rJava/jri]
+  
+
 
 For more detailed information for installing japsa, please refer to  Japsa installation guide on
 http://japsa.readthedocs.org/en/latest/install.html
