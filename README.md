@@ -18,12 +18,8 @@ Software for pipeline setting up
 --------------------------------
 
 The streamline agorithms and auxiliary programs for setting up the pipeline 
-are provided in japsa >= package 
-
-
-In addition to the core of the pipeline provided in our japsa 
-
-The following free-software dependencies are required for setting up the real-time analysis pipeline:
+are provided in japsa package (https://github.com/mdcao/japsa). In addition, the
+free-software dependencies are required:
 
  1. Java >=1.7
  2. bwa >=7.10 (0.7.10-r858-dirty recommended)
@@ -35,7 +31,6 @@ The following free-software dependencies are required for setting up the real-ti
 The Japsa package contains the implementations of the streamline algorithms 
 described in the paper, as well as the auxiliary programs for setting up the
 pipeline. Details documentation of these programs are provided in http://japsa.readthedocs.org/
-
 
 
 II. Prepare 
