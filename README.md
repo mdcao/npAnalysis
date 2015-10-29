@@ -18,8 +18,8 @@ Software for pipeline setting up
 --------------------------------
 
 The streamline agorithms and auxiliary programs for setting up the pipeline 
-are provided in japsa package (https://github.com/mdcao/japsa). In addition, the
-free-software dependencies are required:
+are provided in japsa package (https://github.com/mdcao/japsa). In addition, the 
+following free-software dependencies are required:
 
  1. Java >=1.7
  2. bwa >=7.10 (0.7.10-r858-dirty recommended)
@@ -28,11 +28,38 @@ free-software dependencies are required:
  5. HDF5 (https://hdfgroup.org/HDF5/release/obtain5.html)
  -- optional, needed for translating native fast5 files to fastq
 
-;;;;;;;;;;;;;;;;;;;;;;;;
+++++++++++++++++++++++++
 Quick installation guide
-;;;;;;;;;;;;;;;;;;;;;;;;
+++++++++++++++++++++++++
 
-II. Prepare 
+
+--------------------------------
+Setting up pipeline for 
+--------------------------------
+
+++++++++++++++++++++++
+Species identification
+++++++++++++++++++++++
+
+
+++++++++++++++++++++++++++++++++++++++++++++
+Strain typing with gene presence and absence
+++++++++++++++++++++++++++++++++++++++++++++
+
+
+
++++++++++++++++++++++++
+Strain typing with MLST
++++++++++++++++++++++++
+
+
+++++++++++++++++++++++++++++++
+Resistance gene identification
+++++++++++++++++++++++++++++++
+
+
+
+
 
 
 III. Data
