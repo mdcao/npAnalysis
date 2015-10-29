@@ -37,7 +37,14 @@ make install \
    [SERVER=true \]
    [JLP=/usr/lib/jni:/usr/lib/R/site-library/rJava/jri]
 ```
-  
+ 
+This will install japsa according the directives:
+
+* *INSTALL_DIR*: specifies the directory to install japsa
+* *MXMEM*: specifies the default memory allocated to the java virtual machine
+* *SERVER*: specifies whether to launch the java virtual machine in server mode
+* *JLP*: specifies paths to *libjhdf5*  (needed for npReader) and *libjri.so*
+  (needed for real-time species typing). 
 
 
 For more detailed information for installing japsa, please refer to  Japsa installation guide on
