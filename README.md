@@ -13,8 +13,7 @@ Minh Duc Cao, Devika Ganesamoorthy, Alysha G. Elliott, Huihui Zhang, Matthew
 A. Cooper and Lachlan Coin
 
 
-##Software for pipeline setting up
-
+##Software installation
 
 The streamline agorithms and auxiliary programs for setting up the pipeline 
 are provided in japsa package (https://github.com/mdcao/japsa). In addition, the 
@@ -27,8 +26,11 @@ following free-software dependencies are required:
  5. HDF5 (https://hdfgroup.org/HDF5/release/obtain5.html)
  -- optional, needed for translating native fast5 files to fastq
 
-
 ###Quick installation guide
+
+
+For more detailed information for installing japsa, please refer to  Japsa installation guide on
+http://japsa.readthedocs.org/en/latest/install.html
 
 
 ##Setting up pipeline for 
