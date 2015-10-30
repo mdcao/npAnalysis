@@ -60,16 +60,27 @@ http://japsa.readthedocs.org/en/latest/install.html
 
 Each of the analyses requires a pre-processed database. We make avaibale these databases as follow.
 
-###Species identification
+###Bacterial species database
 
 We make available the database of all bacterial genomes obtained from NCBI genbank, 
-with the addition of two K. quasipnuemoniae strains (see the manuscript), on [XXX]. 
-Note, it might take a while to build the bwa index for this 9Gb database.
+with the addition of two K. quasipnuemoniae strains (see the manuscript). Download
+the database (~3GB), and make an bwa index of the database as follows.
+```
+wget https://swift.rc.nectar.org.au:8888/v1/AUTH_15574c7fb24c44b3b34069185efba190/npAnalysis/SpeciesTyping.tar.gz
+tar zxvf MLST.tar.gz
+cd SpeciesTyping/Bacteria/
+gunzip genomeDB.fasta.gz
+bwa index genomeDB.fasta.gz
+```
+Note that it might take a while to build the bwa index for this 9G-base database.
 
 ###Strain typing with MLST
-
-The MLST schemes as well as pre-processed databases for MLST for K. pnuemoniae, E. coli and
-S. aureus are make avaibale from [XXX]
+The database for MLST typing for three species,  K. pnuemoniae, E. coli and
+S. aureus are make avaibale. Download and unzip them
+```
+wget https://swift.rc.nectar.org.au:8888/v1/AUTH_15574c7fb24c44b3b34069185efba190/npAnalysis/MLST.tar.gz
+tar zxvf MLST.tar.gz
+```
 
 ###Strain typing with gene presence and absence
 
