@@ -40,30 +40,31 @@ make install \
  
 This will install japsa according the directives:
 
-* *INSTALL_DIR*: specifies the directory to install japsa
+* *INSTALL_DIR*: specifies the directory to install japsa, e.g, ~/.usr/local. Make sure
+ you have write privilege to this folder. Also add INSTALL_DIR/bin (e.g., )
+ to your PATH envirenment e.g., 
+```
+export PATH=~/.usr/local/bin:$PATH
+```
 * *MXMEM*: specifies the default memory allocated to the java virtual machine
 * *SERVER*: specifies whether to launch the java virtual machine in server mode
-* *JLP*: specifies paths to *libjhdf5*  (needed for npReader) and *libjri.so*
-  (needed for real-time species typing). 
-
+* *JLP*: points to where HDF libraries and JRI are installed e.g,
+ /usr/local/lib:/usr/lib/R/site-library/rJava/jri. The path to HDF is only needed for
+ creating the pipelines to analyse directly from fast5 files or simultaneously
+ from the MinION sequencing
 
 For more detailed information for installing japsa, please refer to  Japsa installation guide on
 http://japsa.readthedocs.org/en/latest/install.html
 
-
-##Setting up pipeline for 
+##Setting up analysis pipelines
 
 ###Species identification
 
 ###Strain typing with gene presence and absence
 
-
 ###Strain typing with MLST
 
-
 ###Resistance gene identification
-
-
 
 ##Data
 
@@ -72,7 +73,6 @@ http://japsa.readthedocs.org/en/latest/install.html
 ##Contact
 
 Please contact Minh Duc Cao (minhduc.cao@gmail.com) for further information.
-
 
 
 I. Obtaining data
@@ -86,34 +86,6 @@ $ wget http://genomicsresearch.org/public/researcher/npAnalysis/StrainTyping.tar
 $ wget http://genomicsresearch.org/public/researcher/npAnalysis/ResistantGenes.tar.gz && tar zxvf ResistantGenes.tar.gz
 
 Raw data (fast5 format) of the three strains can be obtained from European Nucleotide Archive with Study Accession Number ERP010377
-
-II. Requirements
-
- 1. Java >=1.7
- 2. bwa >=7.10 (0.7.10-r858-dirty recommended)
- 3. R with rJava and MultinomialCI installed
- 4. kalign2 (http://msa.sbc.su.se/cgi-bin/msa.cgi)
- 5. Japsa, https://github.com/mdcao/japsa  (>=1.5-5b included in this package)
- 6. HDF5 (https://hdfgroup.org/HDF5/release/obtain5.html)
- -- optional, needed for translating native fast5 files to fastq
-
-
-II. Installation japsa
-
-From ./japsa directory, type
-
-$make -f Makefile.main install [INSTALL_DIR=<install_directory>] [JLP=<path_to_HDF_libraries> ]
-in which
-
- - JLP points to where HDF libraries and JRI are installed e.g,
- /usr/local/lib:/usr/lib/R/site-library/rJava/jri. The path to HDF is only needed for
- creating the pipelines to analyse directly from fast5 files or  simultaneously
- from the MinION sequencing
-
- - INSTALL_DIR points to where the package will be installed, e.g, ~/.usr/local. Make sure
- you have write privilege to this folder. Also add INSTALL_DIR/bin (e.g., ~/.usr/local/bin)
- to PATH envirenment
-
 
 III. Data
 
@@ -135,9 +107,3 @@ The scripts, together of associated files of the analyses are in the following d
 
  4. ResistantGenes/: Identification of antibiotic resistance gene identification
 
-
-This repositoray contains software and information for analysis of Oxford Nanopore sequencing data.
-
-Source code for the software is made publicly available in https://github.com/mdcao/japsa
-
-Documentation will be updated shortly, please contact Minh Duc Cao (m.cao1@uq.edu.au) if you have any question
