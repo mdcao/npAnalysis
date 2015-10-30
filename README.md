@@ -66,7 +66,7 @@ prepare an index file with list of sequences mapped to each species.
 For example:
 
 genomeDB.fasta
->>NC_123456 Chromosome of species S
+> >NC_123456 Chromosome of species S
 
 
 
