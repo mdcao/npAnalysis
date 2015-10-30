@@ -59,6 +59,7 @@ http://japsa.readthedocs.org/en/latest/install.html
 ##Setting up analysis pipelines
 
 ###Species identification
+
 The species identification pipeline requires a database of genomes of 
 interest which is simply the concatenation of all genomes in fasta format.
 Prepare an index file which specifies the species of each sequence in the 
@@ -72,9 +73,9 @@ ACGTACGTACGT
 ACGTACGTACGT
 >NC_00000013 Plasmid 2  of species Genus1 species1
 ACGTACGTACGT
->NC_00000021 Chromsome of of species Genus1 species2
+>NC_00000021 Chromsome of species Genus1 species2
 ACGTACGTACGT
->NC_00000031 Chromsome of of species Genus2 species3
+>NC_00000031 Chromsome of species Genus2 species3
 ACGTACGTACGT
 ```
 
@@ -87,15 +88,17 @@ Genus1_species2 >NC_00000021 Chromsome of of species Genus1 species2
 Genus2_species3 >NC_00000031 Chromsome of of species Genus2 species3
 ```
 
-We make available the database of all bacterial genomes obtained from NCBI genbank, with the addition 
-of two K. quasipnuemoniae strains (see the manuscript), on
-
-
-
-
-###Strain typing with gene presence and absence
+Finally, build a bwa index of the database
+```
+bwa index genomeDB.fasta
+```
+We make available the database of all bacterial genomes obtained from NCBI genbank, 
+with the addition of two K. quasipnuemoniae strains (see the manuscript), on [XXX]. 
+Note, it might take a while to build the bwa index for this 9Gb database.
 
 ###Strain typing with MLST
+
+###Strain typing with gene presence and absence
 
 ###Resistance gene identification
 
