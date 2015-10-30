@@ -104,7 +104,7 @@ For bacterial species typing,
 ```
 jsa.util.streamServer -port 3456 \
   | bwa mem -t 10 -k11 -W20 -r10 -A1 -B1 -O1 -E1 -L0 -Y -K 10000 <path>/SpeciesTyping/Bacteria/genomeDB.fasta - 2> /dev/null \
-  | jsa.np.rtSpeciesTyping -bam - -index <path>/SpeciesTyping/Bacteria/speciesIndex --read 50 -time 60 -out speciesTypingResults.out 2>  speciesTypingResults.log &
+  | jsa.np.rtSpeciesTyping -bam - -index <path>/SpeciesTyping/Bacteria/speciesIndex --read 50 -time 60 -out speciesTypingResults.out 2>  speciesTypingResults.log 
 ```
 This will create a pipeline to identify 
 species which reports every 60 seconds, with at least 50 more reads 
@@ -115,17 +115,26 @@ For strain typing gene presence/absense for K. pneumoniae
 ```
 jsa.util.streamServer -port 3457 \
   | bwa mem -t 2 -k11 -W20 -r10 -A1 -B1 -O1 -E1 -L0 -Y -K 10000 -a ${base}/geneFam.fasta - 2> /dev/null \
-  | jsa.np.rtStrainTyping -bam -  -geneDB <path>/StrainTyping/Klebsiella_pneumoniae/ -read 0 -time 20 --out kPStrainTyping.dat 2>  kPStrainTyping.log &
+  | jsa.np.rtStrainTyping -bam -  -geneDB <path>/StrainTyping/Klebsiella_pneumoniae/ -read 0 -time 20 --out kPStrainTyping.dat 2>  kPStrainTyping.log 
 ```
 You can run strain typing pipelines for other species (e.g., E. coli and S. aureus) 
 if you have reason to believe the sample may contain these species. If these pipeline
 run on the same computer, make sure they listen to different ports.
 
+
+```
+jsa.util.streamServer -port 3458 \ 
+  | bwa mem -t 8 -k11 -W20 -r10 -A1 -B1 -O1 -E1 -L0 -a -Y <path>/MLST/Klebsiella_pneumoniae/bwaIndex/genes.fasta - \
+  |  jsa.np.rtMLST -bam - -mlst <path>/MLST/Klebsiella_pneumoniae/ -read 1000 -time 600  --out KpMLST.out
+```
+
+Again, you set up MLST for E. coli and/or S. aureus as well.
+
 For resistance gene identification:
 ```
-jsa.util.streamServer -port 3457 \ 
+jsa.util.streamServer -port 3459 \ 
   | bwa mem -t 2 -k11 -W20 -r10 -A1 -B1 -O1 -E1 -L0 -Y -K 10000 -a <path>/ResGene/resFinder/DB.fasta - 2> /dev/null \
-  | jsa.np.rtResistGenes -bam - -score=0.0001 -time 120 -read 50 --resDB  <path>/ResGene/resFinder/  -tmp _tmp_ -o resGene.dat -thread 4  2> resGene.log &
+  | jsa.np.rtResistGenes -bam - -score=0.0001 -time 120 -read 50 --resDB  <path>/ResGene/resFinder/  -tmp _tmp_ -o resGene.dat -thread 4  2> resGene.log 
 ```
 
 You may want to modify the parameter -port for  jsa.util.streamServer 
