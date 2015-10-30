@@ -96,9 +96,19 @@ wget https://swift.rc.nectar.org.au:8888/v1/AUTH_15574c7fb24c44b3b34069185efba19
 tar zxvf ResGene.tar.gz
 ```
 
-##Data
+##Setting up pipeline
+The framework makes use of the interprocess communication mechanism pipe as well as network channels to set up the real-time pipeline. You can prepare one or more analyses to run in real-time.
 
-##Putting together
+For bacterial species typing,
+
+```
+jsa.util.streamServer -port 3458 | bwa mem -t 10 -k11 -W20 -r10 -A1 -B1 -O1 -E1 -L0 -Y -K 10000 <path>/SpeciesTyping/Bacteria/genomeDB.fasta - 2> /dev/null | jsa.np.rtSpeciesTyping -bam - -index <path>/SpeciesTyping/Bacteria/speciesIndex --read 50 -time 60 -out speciesTypingResults.out 2>  speciesTypingResults.log &
+```
+Please modify the -port parameter for  jsa.util.streamServer and -t for bwa accordingly 
+to your system. This will create a pipeline to identify species which reports every 60 
+seconds, with at least 50 more reads from the last report. The pipeline waits for input 
+on the specified port for incoming data.
+
 
 ##Contact
 
