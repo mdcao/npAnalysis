@@ -64,30 +64,27 @@ interest which is simply the concatenation of all genomes in fasta format.
 Prepare an index file which specifies the species of each sequence in the 
 database. For example:
 
-genomeDB.fasta
-```>NC_0000011 Chromosome of species Genus1 species1
+Content of genomeDB.fasta
+```
+>NC_0000011 Chromosome of species Genus1 species1
 ACGTACGTACGT
 >NC_00000012 Plasmid 1  of species Genus1 species1
 ACGTACGTACGT
->>NC_00000013 Plasmid 2  of species Genus1 species1
+>NC_00000013 Plasmid 2  of species Genus1 species1
 ACGTACGTACGT
->>NC_00000021 Chromsome of of species Genus1 species2
+>NC_00000021 Chromsome of of species Genus1 species2
 ACGTACGTACGT
->>NC_00000031 Chromsome of of species Genus2 species3
+>NC_00000031 Chromsome of of species Genus2 species3
 ACGTACGTACGT
 ```
 
-
-
-
-
-
+Content of speciesIndex
 ```
-touch db.fasta
-for f in strain1.fasta strain1.fasta strain2.fasta;
-do
-   cat $f >> db.fasta
-done
+Genus1_species1 >NC_0000011 Chromosome of species Genus1 species1
+Genus1_species1 >NC_00000012 Plasmid 1  of species Genus1 species1
+Genus1_species1 >NC_00000013 Plasmid 2  of species Genus1 species1
+Genus1_species2 >NC_00000021 Chromsome of of species Genus1 species2
+Genus2_species3 >NC_00000031 Chromsome of of species Genus2 species3
 ```
 
 We make available the database of all bacterial genomes obtained from NCBI genbank, with the addition 
