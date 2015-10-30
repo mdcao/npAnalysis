@@ -63,7 +63,7 @@ Each of the analyses requires a pre-processed database. We make avaibale these d
 ###Bacterial species database
 
 We make available the database of all bacterial genomes obtained from NCBI genbank, 
-with the addition of two K. quasipnuemoniae strains (see the manuscript). Download
+with the addition of two K. quasipneumoniae strains (see the manuscript). Download
 the database (~2.8GB), and make an bwa index of the database as follows.
 ```
 wget https://swift.rc.nectar.org.au:8888/v1/AUTH_15574c7fb24c44b3b34069185efba190/npAnalysis/SpeciesTyping.tar.gz
@@ -75,7 +75,7 @@ bwa index genomeDB.fasta.gz
 Note that it might take a while to build the bwa index for this 9G-base database.
 
 ###Strain typing with MLST
-The database for MLST typing for three species,  K. pnuemoniae, E. coli and
+The database for MLST typing for three species,  K. pneumoniae, E. coli and
 S. aureus are make avaibale. Download (208KB) and unzip them:
 ```
 wget https://swift.rc.nectar.org.au:8888/v1/AUTH_15574c7fb24c44b3b34069185efba190/npAnalysis/MLST.tar.gz
@@ -83,7 +83,7 @@ tar zxvf MLST.tar.gz
 ```
 
 ###Strain typing with gene presence and absence
-The database for gene presence and absence strain typing for K. pnuemoniae, E. coli and
+The database for gene presence and absence strain typing for K. pneumoniae, E. coli and
 S. aureus can be obtained as follows:
 ```
 wget https://swift.rc.nectar.org.au:8888/v1/AUTH_15574c7fb24c44b3b34069185efba190/npAnalysis/StrainTyping.tar.gz
@@ -126,7 +126,6 @@ For resistance gene identification:
 jsa.util.streamServer -port 3457 \ 
   | bwa mem -t 2 -k11 -W20 -r10 -A1 -B1 -O1 -E1 -L0 -Y -K 10000 -a <path>/ResGene/resFinder/DB.fasta - 2> /dev/null \
   | jsa.np.rtResistGenes -bam - -score=0.0001 -time 120 -read 50 --resDB  <path>/ResGene/resFinder/  -tmp _tmp_ -o resGene.dat -thread 4  2> resGene.log &
-
 ```
 
 You may want to modify the parameter -port for  jsa.util.streamServer 
@@ -138,47 +137,30 @@ streamline data into
 ```
 jsa.np.f5reader -GUI -realtime -folder <DownloadFolder> -fail -output data.fastq -stream server1:port1,server2:port2,server3:port3
 ```
-in which the -folder parameter specifies the Downloads folder from the Mechicon, and the -stream parameter
+in which the -folder parameter specifies the downloads folder from the Metrichor
+base-calling, and the -stream parameter
 lists the computer address and port number that the analyses are listening.
 
-Once this is done, you can start the MinION and Mechichon to start the analyses.
+Once this is done, you can start the MinION and Metrichor to start the analyses.
 
+
+In case the MinION run and base-calling have been done, you can also run
+npReader to convert the data in fast5 format to fastq and streamline in
+to the pipelines. If the data have also been convereted to fastq format,
+you can run
+```
+jsa.util.streamClient -input <data.fastq> -server server1:port1,server2:port2,server3:port3
+```
+
+###Retro-realtime analysis
+
+First, convert the data to fastq format and extract the timing information (make sure parameter -time is turned on):
+```
+jsa.np.f5reader -folder <downloads> -fail -number -stat -out data.fastq
+```
 
 
 ##Contact
 
 Please contact Minh Duc Cao (minhduc.cao@gmail.com) for further information.
-
-
-I. Obtaining data
-
-To run the analyses, download and unzip the .gz files, i.e.:
-$ wget http://genomicsresearch.org/public/researcher/npAnalysis/japsa-v1.5-5b.tar.gz && tar zxvf japsa-v1.5-5b.tar.gz
-$ wget http://genomicsresearch.org/public/researcher/npAnalysis/FastqData.tar.gz && tar zxvf FastqData.tar.gz
-$ wget http://genomicsresearch.org/public/researcher/npAnalysis/SpeciesTyping.tar.gz && tar zxvf SpeciesTyping.tar.gz
-$ wget http://genomicsresearch.org/public/researcher/npAnalysis/MLST.tar.gz && tar zxvf MLST.tar.gz
-$ wget http://genomicsresearch.org/public/researcher/npAnalysis/StrainTyping.tar.gz && tar zxvf StrainTyping.tar.gz
-$ wget http://genomicsresearch.org/public/researcher/npAnalysis/ResistantGenes.tar.gz && tar zxvf ResistantGenes.tar.gz
-
-Raw data (fast5 format) of the three strains can be obtained from European Nucleotide Archive with Study Accession Number ERP010377
-
-III. Data
-
-Nanopore data in fastq format are kept in FastqData.
-
-Raw data (fast5 format) can be obtained from Sequence Read Archive, Study Accession
-Number ERP010377
-
-
-IV. Running analyses
-
-The scripts, together of associated files of the analyses are in the following directories:
-
- 1. SpeciesTyping/: species typing
-
- 2. MLST/: Multi-locus strain typing
-
- 3. StrainTyping/: Strain typing with gene presence/absence
-
- 4. ResistantGenes/: Identification of antibiotic resistance gene identification
 
