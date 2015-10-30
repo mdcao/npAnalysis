@@ -156,8 +156,17 @@ jsa.util.streamClient -input <data.fastq> -server server1:port1,server2:port2,se
 
 First, convert the data to fastq format and extract the timing information (make sure parameter -time is turned on):
 ```
-jsa.np.f5reader -folder <downloads> -fail -number -stat -out data.fastq
+jsa.np.f5reader -folder <downloads> -fail -number -stat -time -out dataT.fastq
 ```
+Next sort the reads in the order they were generated:
+```
+jsa.seq.sort -i dataT.fastq -o dataS.fastq --sortKey=timestamp
+```
+Finally, stream the data using jsa.np.timeEmulate:
+```
+jsa.np.timeEmulate -input dataS.fastq  -scale 1  -output - |jsa.util.streamClient -input - -server  server1:port1,server2:port2,server3:port3
+```
+You can crease the value in -scale to test higher throughput. 
 
 
 ##Contact
