@@ -59,6 +59,24 @@ http://japsa.readthedocs.org/en/latest/install.html
 ##Setting up analysis pipelines
 
 ###Species identification
+The species identification pipeline requires a database of genomes of 
+interest. Simply put all the genomes together in a fasta.  file where each 
+genome can have multiple sequences for chromosomes, plasmids etc. Also
+prepare an index file with list 
+
+```
+touch db.fasta
+for f in strain1.fasta strain1.fasta strain2.fasta;
+do
+   cat $f >> db.fasta
+done
+```
+
+We make available the database of all bacterial genomes obtained from NCBI genbank, with the addition 
+of two K. quasipnuemoniae strains (see the manuscript), on
+
+
+
 
 ###Strain typing with gene presence and absence
 
