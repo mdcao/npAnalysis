@@ -64,10 +64,10 @@ Each of the analyses requires a pre-processed database. We make avaibale these d
 
 We make available the database of all bacterial genomes obtained from NCBI genbank, 
 with the addition of two K. quasipnuemoniae strains (see the manuscript). Download
-the database (~3GB), and make an bwa index of the database as follows.
+the database (~2.8GB), and make an bwa index of the database as follows.
 ```
 wget https://swift.rc.nectar.org.au:8888/v1/AUTH_15574c7fb24c44b3b34069185efba190/npAnalysis/SpeciesTyping.tar.gz
-tar zxvf MLST.tar.gz
+tar zxvf SpeciesTyping.tar.gz
 cd SpeciesTyping/Bacteria/
 gunzip genomeDB.fasta.gz
 bwa index genomeDB.fasta.gz
@@ -76,16 +76,25 @@ Note that it might take a while to build the bwa index for this 9G-base database
 
 ###Strain typing with MLST
 The database for MLST typing for three species,  K. pnuemoniae, E. coli and
-S. aureus are make avaibale. Download and unzip them
+S. aureus are make avaibale. Download (208KB) and unzip them:
 ```
 wget https://swift.rc.nectar.org.au:8888/v1/AUTH_15574c7fb24c44b3b34069185efba190/npAnalysis/MLST.tar.gz
 tar zxvf MLST.tar.gz
 ```
 
 ###Strain typing with gene presence and absence
-
+The database for gene presence and absence strain typing for K. pnuemoniae, E. coli and
+S. aureus can be obtained as follows:
+```
+wget https://swift.rc.nectar.org.au:8888/v1/AUTH_15574c7fb24c44b3b34069185efba190/npAnalysis/StrainTyping.tar.gz
+tar zxvf ResGene.tar.gz
+```
 
 ###Resistance gene identification
+```
+wget https://swift.rc.nectar.org.au:8888/v1/AUTH_15574c7fb24c44b3b34069185efba190/npAnalysis/ResGene.tar.gz
+tar zxvf ResGene.tar.gz
+```
 
 ##Data
 
