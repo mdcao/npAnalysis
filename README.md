@@ -102,12 +102,47 @@ The framework makes use of the interprocess communication mechanism pipe as well
 For bacterial species typing,
 
 ```
-jsa.util.streamServer -port 3458 | bwa mem -t 10 -k11 -W20 -r10 -A1 -B1 -O1 -E1 -L0 -Y -K 10000 <path>/SpeciesTyping/Bacteria/genomeDB.fasta - 2> /dev/null | jsa.np.rtSpeciesTyping -bam - -index <path>/SpeciesTyping/Bacteria/speciesIndex --read 50 -time 60 -out speciesTypingResults.out 2>  speciesTypingResults.log &
+jsa.util.streamServer -port 3456 \
+  | bwa mem -t 10 -k11 -W20 -r10 -A1 -B1 -O1 -E1 -L0 -Y -K 10000 <path>/SpeciesTyping/Bacteria/genomeDB.fasta - 2> /dev/null \
+  | jsa.np.rtSpeciesTyping -bam - -index <path>/SpeciesTyping/Bacteria/speciesIndex --read 50 -time 60 -out speciesTypingResults.out 2>  speciesTypingResults.log &
 ```
-Please modify the -port parameter for  jsa.util.streamServer and -t for bwa accordingly 
-to your system. This will create a pipeline to identify species which reports every 60 
-seconds, with at least 50 more reads from the last report. The pipeline waits for input 
-on the specified port for incoming data.
+This will create a pipeline to identify 
+species which reports every 60 seconds, with at least 50 more reads 
+from the last report. The pipeline waits for input on port 3456 for incoming data.
+
+
+For strain typing gene presence/absense for K. pneumoniae  
+```
+jsa.util.streamServer -port 3457 \
+  | bwa mem -t 2 -k11 -W20 -r10 -A1 -B1 -O1 -E1 -L0 -Y -K 10000 -a ${base}/geneFam.fasta - 2> /dev/null \
+  | jsa.np.rtStrainTyping -bam -  -geneDB <path>/StrainTyping/Klebsiella_pneumoniae/ -read 0 -time 20 --out kPStrainTyping.dat 2>  kPStrainTyping.log &
+```
+You can run strain typing pipelines for other species (e.g., E. coli and S. aureus) 
+if you have reason to believe the sample may contain these species. If these pipeline
+run on the same computer, make sure they listen to different ports.
+
+For resistance gene identification:
+```
+jsa.util.streamServer -port 3457 \ 
+  | bwa mem -t 2 -k11 -W20 -r10 -A1 -B1 -O1 -E1 -L0 -Y -K 10000 -a <path>/ResGene/resFinder/DB.fasta - 2> /dev/null \
+  | jsa.np.rtResistGenes -bam - -score=0.0001 -time 120 -read 50 --resDB  <path>/ResGene/resFinder/  -tmp _tmp_ -o resGene.dat -thread 4  2> resGene.log &
+
+```
+
+You may want to modify the parameter -port for  jsa.util.streamServer 
+and -t for bwa to suit your computer system. 
+
+Once these programs are ready for their analysis, you can start npReader to 
+streamline data into 
+
+```
+jsa.np.f5reader -GUI -realtime -folder <DownloadFolder> -fail -output data.fastq -stream server1:port1,server2:port2,server3:port3
+```
+in which the -folder parameter specifies the Downloads folder from the Mechicon, and the -stream parameter
+lists the computer address and port number that the analyses are listening.
+
+Once this is done, you can start the MinION and Mechichon to start the analyses.
+
 
 
 ##Contact
