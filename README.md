@@ -65,7 +65,7 @@ Prepare an index file which specifies the species of each sequence in the
 database. For example:
 
 genomeDB.fasta
-> >NC_0000011 Chromosome of species Genus1 species1
+```>NC_0000011 Chromosome of species Genus1 species1
 ACGTACGTACGT
 >NC_00000012 Plasmid 1  of species Genus1 species1
 ACGTACGTACGT
@@ -75,6 +75,7 @@ ACGTACGTACGT
 ACGTACGTACGT
 >>NC_00000031 Chromsome of of species Genus2 species3
 ACGTACGTACGT
+```
 
 
 
