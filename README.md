@@ -60,13 +60,24 @@ http://japsa.readthedocs.org/en/latest/install.html
 
 ###Species identification
 The species identification pipeline requires a database of genomes of 
-interest. Simply put all the genomes together in a fasta file. Each 
-genome can have multiple sequences for chromosomes, plasmids etc. Also
-prepare an index file with list of sequences mapped to each species.
-For example:
+interest which is simply the concatenation of all genomes in fasta format.
+Prepare an index file which specifies the species of each sequence in the 
+database. For example:
 
 genomeDB.fasta
-> >NC_123456 Chromosome of species S
+> >NC_0000011 Chromosome of species Genus1 species1
+ACGTACGTACGT
+>NC_00000012 Plasmid 1  of species Genus1 species1
+ACGTACGTACGT
+>>NC_00000013 Plasmid 2  of species Genus1 species1
+ACGTACGTACGT
+>>NC_00000021 Chromsome of of species Genus1 species2
+ACGTACGTACGT
+>>NC_00000031 Chromsome of of species Genus2 species3
+ACGTACGTACGT
+
+
+
 
 
 
