@@ -58,7 +58,11 @@ http://japsa.readthedocs.org/en/latest/install.html
 
 ##Databases and data
 
-Each of the analyses requires a pre-processed database. We make avaibale these databases as follow.
+Each of the analyses requires a pre-processed database. We make avaibale these 
+databases on http://genomicsresearch.org/public/researcher/npAnalysis/
+(and a backup storage 
+https://swift.rc.nectar.org.au:8888/v1/AUTH_15574c7fb24c44b3b34069185efba190/npAnalysis/).
+Setting up these databases for use as follows:
 
 ###Bacterial species database
 
