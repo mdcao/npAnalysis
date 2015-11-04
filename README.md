@@ -179,7 +179,17 @@ Finally, stream the data using jsa.np.timeEmulate:
 ```
 jsa.np.timeEmulate -input dataS.fastq  -scale 1  -output - |jsa.util.streamClient -input - -server  server1:port1,server2:port2,server3:port3
 ```
-You can crease the value in -scale to test higher throughput. 
+You can crease the value in -scale to test higher throughput.
+
+We provides the data from our four MinION runs in fastq format, sorted in the order
+of sequencing (key=cTime). To re-run our analyses, set up the analysis pipeline as above,
+and then stream our data through the pipeline, eg.,
+```
+jsa.np.timeEmulate -input nGN_045_R7_X4S.fastq  -scale 100 -key=cTime -output - |jsa.util.streamClient -input - -server server1:port1,server2:port2,server3:port3
+```
+
+
+
 
 
 ##Contact
