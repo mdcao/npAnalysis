@@ -30,6 +30,7 @@ free-software dependencies are required:
 Quick installation guide
 ++++++++++++++++++++++++ 
 ::
+
    git clone https://github.com/mdcao/japsa
    cd japsa
    make install \
