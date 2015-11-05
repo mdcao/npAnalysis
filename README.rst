@@ -73,24 +73,26 @@ Prepare an index file which specifies the species of each sequence in the
 database. For example:
 
 Content of genomeDB.fasta
- >NC_0000011 Chromosome of species Genus1 species1
- ACGTACGTACGT
- >NC_00000012 Plasmid 1  of species Genus1 species1
- ACGTACGTACGT
- >NC_00000013 Plasmid 2  of species Genus1 species1
- ACGTACGTACGT
- >NC_00000021 Chromsome of species Genus1 species2
- ACGTACGTACGT
- >NC_00000031 Chromsome of species Genus2 species3
- ACGTACGTACGT
+
+| >NC_0000011 Chromosome of species Genus1 species1
+| ACGTACGTACGT
+| >NC_00000012 Plasmid 1  of species Genus1 species1
+| ACGTACGTACGT
+| >NC_00000013 Plasmid 2  of species Genus1 species1
+| ACGTACGTACGT
+| >NC_00000021 Chromsome of species Genus1 species2
+| ACGTACGTACGT
+| >NC_00000031 Chromsome of species Genus2 species3
+| ACGTACGTACGT
 
 
 Content of speciesIndex
- Genus1_species1 >NC_0000011 Chromosome of species Genus1 species1
- Genus1_species1 >NC_00000012 Plasmid 1  of species Genus1 species1
- Genus1_species1 >NC_00000013 Plasmid 2  of species Genus1 species1
- Genus1_species2 >NC_00000021 Chromsome of of species Genus1 species2
- Genus2_species3 >NC_00000031 Chromsome of of species Genus2 species3
+
+| Genus1_species1 >NC_0000011 Chromosome of species Genus1 species1
+| Genus1_species1 >NC_00000012 Plasmid 1  of species Genus1 species1
+| Genus1_species1 >NC_00000013 Plasmid 2  of species Genus1 species1
+| Genus1_species2 >NC_00000021 Chromsome of of species Genus1 species2
+| Genus2_species3 >NC_00000031 Chromsome of of species Genus2 species3
 
 
 Finally, build a bwa index of the database::
