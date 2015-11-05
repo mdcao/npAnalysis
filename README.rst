@@ -207,6 +207,13 @@ and then stream our data through the pipeline, eg.,::
    tar zxvf data.tar.gz
    jsa.np.timeEmulate -input data/nGN_045_R7_X4S.fastq -scale 120 -output - |jsa.util.streamClient -input - -server  server1:port1,server2:port2,server3:port3
 
+===================
+Data from the study
+===================
+
+The MinION sequencing data for three K. pneumoniae samples have been deposited to ENA Accession PRJEB9295. The MinION sequencing of the mixture sample and the MiSeq sequencing of all isolates are in the process to be uploaded. They can be obtained from http://genomicsresearch.org/public/researcher/npAnalysis/MiSeqSequencing.tar.gz and http://genomicsresearch.org/public/researcher/npAnalysis/MiSeqSequencing.tar.gz for the time being.
+
+
 ======================
 Further documentations
 ======================
