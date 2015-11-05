@@ -116,6 +116,16 @@ Setting up real-time analysis pipeline
 
 The framework makes use of the `interprocess communication mechanism pipe <https://en.wikipedia.org/wiki/Pipeline_(Unix)>`_ as well as network channels to set up the real-time pipeline. The japsa package provides `jsa.util.streamServer <http://japsa.readthedocs.org/en/latest/tools/jsa.util.streamServer.html>`_ and `jsa.util.streamClient <http://japsa.readthedocs.org/en/latest/tools/jsa.util.streamClient.html>`_ to facilitate setting a pipeline distributed on a computer cluser. You can prepare one or more analyses to run in real-time.
 
+For bacterial species typing::
+
+   jsa.util.streamServer -port 3456 \
+     | bwa mem -t 10 -k11 -W20 -r10 -A1 -B1 -O1 -E1 -L0 -Y -K 10000 SpeciesTyping/Bacteria/genomeDB.fasta - 2> /dev/null \
+     | jsa.np.rtSpeciesTyping -bam - -index SpeciesTyping/Bacteria/speciesIndex --read 50 -time 60 -out speciesTypingResults.out 2>  speciesTypingResults.log &
+
+This will create a pipeline to identify species which reports every 60 seconds, with at least 50 more reads from the last report. The pipeline waits for input on port 3456 for incoming data.
+
+
+
 
 
 
