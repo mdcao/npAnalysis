@@ -265,10 +265,10 @@ More details of usage of the discussed programs are provided in `ReadTheDocs for
 * `jsa.util.streamServer <http://japsa.readthedocs.org/en/latest/tools/jsa.util.streamServer.html>`_
 * `jsa.util.streamClient <http://japsa.readthedocs.org/en/latest/tools/jsa.util.streamClient.html>`_
 * `jsa.np.filter <http://japsa.readthedocs.org/en/latest/tools/jsa.np.filter.html>`_
-* jsa.np.rtSpeciesTyping -- to be documented
+* `jsa.np.rtSpeciesTyping <http://japsa.readthedocs.org/en/latest/tools/jsa.np.rtSpeciesTyping.html>`_
 * `jsa.np.rtStrainTyping <http://japsa.readthedocs.org/en/latest/tools/jsa.np.rtStrainTyping.html>`_
 * jsa.np.rtMLST -- to be documented
-* jsa.np.rtResGen -- to be documented
+* jsa.np.rtResistGene -- to be documented
 
 =======
 Contact
