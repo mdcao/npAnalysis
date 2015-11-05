@@ -129,15 +129,26 @@ For strain typing gene presence/absense for K. pneumoniae::
 
    jsa.util.streamServer -port 3457 \
      | bwa mem -t 2 -k11 -W20 -r10 -A1 -B1 -O1 -E1 -L0 -Y -K 10000 -a StrainTyping/Klebsiella_pneumoniae/geneFam.fasta - 2> /dev/null \
-  | jsa.np.rtStrainTyping -bam -  -geneDB StrainTyping/Klebsiella_pneumoniae/ -read 0 -time 20 --out kPStrainTyping.dat 2>  kPStrainTyping.log 
+     | jsa.np.rtStrainTyping -bam -  -geneDB StrainTyping/Klebsiella_pneumoniae/ -read 0 -time 20 --out kPStrainTyping.dat 2>  kPStrainTyping.log &
 
 You can run strain typing pipelines for other species (e.g., E. coli and S. aureus) 
 if you have reason to believe the sample may contain these species. If these pipeline
 run on the same computer, make sure they listen to different ports.
 
+For strain typing with MLST::
+
+   jsa.util.streamServer -port 3458 \ 
+     | bwa mem -t 8 -k11 -W20 -r10 -A1 -B1 -O1 -E1 -L0 -a -Y MLST/Klebsiella_pneumoniae/bwaIndex/genes.fasta - \
+     | jsa.np.rtMLST -bam - -mlst MLST/Klebsiella_pneumoniae/ -read 1000 -time 600  --out KpMLST.out &
+
+Again, you set up MLST for E. coli and/or S. aureus as well. However, due to high error rate of the current Oxford Nanopore sequencing, this analysis may require a large amount of data. The presence/absence analysis above is recommended.
 
 
+For resistance gene identification::
 
+   jsa.util.streamServer -port 3459 \ 
+     | bwa mem -t 2 -k11 -W20 -r10 -A1 -B1 -O1 -E1 -L0 -Y -K 10000 -a ResGene/resFinder/DB.fasta - 2> /dev/null \
+     | jsa.np.rtResistGenes -bam - -score=0.0001 -time 120 -read 50 --resDB  <path>/ResGene/resFinder/  -tmp _tmp_ -o resGene.dat -thread 4  2> resGene.log &
 
 
 
