@@ -2,6 +2,7 @@
 Real-time analysis of Oxford Nanopore MinION sequencing
 #######################################################
 
+.. sectnum::
 
 This directory contains information for setting up real-time analysis
 of Oxford Nanopore sequencing data, as described in the paper:
