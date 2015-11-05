@@ -125,7 +125,7 @@ You can run strain typing pipelines for other species (e.g., E. coli and S. aure
 if you have reason to believe the sample may contain these species. If these pipeline
 run on the same computer, make sure they listen to different ports.
 
-
+For 
 ```
 jsa.util.streamServer -port 3458 \ 
   | bwa mem -t 8 -k11 -W20 -r10 -A1 -B1 -O1 -E1 -L0 -a -Y <path>/MLST/Klebsiella_pneumoniae/bwaIndex/genes.fasta - \
