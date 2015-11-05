@@ -114,7 +114,7 @@ A database of antibiotic resistance gene obtained from resFinder (https://cge.cb
 Setting up real-time analysis pipeline
 ======================================
 
-The framework makes use of the `interprocess communication mechanism pipe <https://en.wikipedia.org/wiki/Pipeline_(Unix)>`_ as well as network channels to set up the real-time pipeline. You can prepare one or more analyses to run in real-time.
+The framework makes use of the `interprocess communication mechanism pipe <https://en.wikipedia.org/wiki/Pipeline_(Unix)>`_ as well as network channels to set up the real-time pipeline. The japsa package provides `jsa.util.streamServer <http://japsa.readthedocs.org/en/latest/tools/jsa.util.streamServer.html>`_ and `jsa.util.streamClient <http://japsa.readthedocs.org/en/latest/tools/jsa.util.streamClient.html>`_ to facilitate setting a pipeline distributed on a computer cluser. You can prepare one or more analyses to run in real-time.
 
 
 
