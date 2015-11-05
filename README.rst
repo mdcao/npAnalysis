@@ -73,9 +73,8 @@ database (~2.8GB), and make an bwa index of the database as follows.::
 
    wget https://swift.rc.nectar.org.au:8888/v1/AUTH_15574c7fb24c44b3b34069185efba190/npAnalysis/SpeciesTyping.tar.gz
    tar zxvf SpeciesTyping.tar.gz
-   cd SpeciesTyping/Bacteria/
-   gunzip genomeDB.fasta.gz
-   bwa index genomeDB.fasta
+   gunzip SpeciesTyping/Bacteria/genomeDB.fasta.gz
+   bwa index SpeciesTyping/Bacteria/genomeDB.fasta
 
 Note that it might take a while to build the bwa index for this 9G-base database.
 
@@ -148,7 +147,7 @@ For resistance gene identification::
 
    jsa.util.streamServer -port 3459 \ 
      | bwa mem -t 2 -k11 -W20 -r10 -A1 -B1 -O1 -E1 -L0 -Y -K 10000 -a ResGene/resFinder/DB.fasta - 2> /dev/null \
-     | jsa.np.rtResistGenes -bam - -score=0.0001 -time 120 -read 50 --resDB  <path>/ResGene/resFinder/  -tmp _tmp_ -o resGene.dat -thread 4  2> resGene.log &
+     | jsa.np.rtResistGenes -bam - -score=0.0001 -time 120 -read 50 --resDB  ResGene/resFinder/  -tmp _tmp_ -o resGene.dat -thread 4  2> resGene.log &
 
 
 
