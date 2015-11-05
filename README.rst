@@ -211,7 +211,7 @@ and then stream our data through the pipeline, eg.,::
 Further documentations
 ======================
 
-More details of usage of the discussed programs are provided in `ReadTheDocs for Japsa <https://readthedocs.org/projects/japsa/>`_. More specificially:
+More details of usage of the discussed programs are provided in `ReadTheDocs for Japsa <http://japsa.readthedocs.org/en/latest/>`_. More specificially:
 
 * `npReader <http://japsa.readthedocs.org/en/latest/tools/jsa.np.f5reader.html>`_
 * `jsa.util.streamServer <http://japsa.readthedocs.org/en/latest/tools/jsa.util.streamServer.html>`_
