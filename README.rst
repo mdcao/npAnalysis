@@ -125,7 +125,15 @@ For bacterial species typing::
 This will create a pipeline to identify species which reports every 60 seconds, with at least 50 more reads from the last report. The pipeline waits for input on port 3456 for incoming data.
 
 
+For strain typing gene presence/absense for K. pneumoniae::
 
+   jsa.util.streamServer -port 3457 \
+     | bwa mem -t 2 -k11 -W20 -r10 -A1 -B1 -O1 -E1 -L0 -Y -K 10000 -a StrainTyping/Klebsiella_pneumoniae/geneFam.fasta - 2> /dev/null \
+  | jsa.np.rtStrainTyping -bam -  -geneDB StrainTyping/Klebsiella_pneumoniae/ -read 0 -time 20 --out kPStrainTyping.dat 2>  kPStrainTyping.log 
+
+You can run strain typing pipelines for other species (e.g., E. coli and S. aureus) 
+if you have reason to believe the sample may contain these species. If these pipeline
+run on the same computer, make sure they listen to different ports.
 
 
 
