@@ -105,6 +105,7 @@ Resistance gene identification
 ------------------------------
 
 A database of antibiotic resistance gene obtained from resFinder (https://cge.cbs.dtu.dk/services/ResFinder/) and pre-processed and provided from::
+
   wget https://swift.rc.nectar.org.au:8888/v1/AUTH_15574c7fb24c44b3b34069185efba190/npAnalysis/ResGene.tar.gz
   tar zxvf ResGene.tar.gz
   
