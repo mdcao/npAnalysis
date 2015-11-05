@@ -40,7 +40,7 @@ Quick installation guide
      [SERVER=true \]
      [JLP=/usr/lib/jni:/usr/lib/R/site-library/rJava/jri]
 
-(Note: the directives in squared brackets are optional, remove the brackets if you use those).
+(Note: the directives in squared brackets are optional. If you use those, remove the brackets and set the values accordingly to suit your computer settings).
 
 This will install japsa according the directives:
 
@@ -57,3 +57,12 @@ http://japsa.readthedocs.org/en/latest/install.html
 ==================
 Databases and data
 ==================
+
+The analyses described in the paper require accessing to some pre-processed databases. We make avaibale these 
+databases on http://genomicsresearch.org/public/researcher/npAnalysis/ (and a backup storage 
+https://swift.rc.nectar.org.au:8888/v1/AUTH_15574c7fb24c44b3b34069185efba190/npAnalysis/).
+Setting up these databases for use as follows: 
+
+
+
+
