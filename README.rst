@@ -45,9 +45,7 @@ This will install japsa according the directives:
 * *INSTALL_DIR*: specifies the directory to install japsa, make sure you have write permission to this directory
 * *MXMEM*: specifies the default memory allocated to the java virtual machine
 * *SERVER*: specifies whether to launch the java virtual machine in server mode
-* *JLP*: points to where HDF libraries and JRI are installed (e.g, /usr/local/lib:/usr/lib/R/site-library/rJava/jri). The path to HDF is only needed for creating the pipelines to analyse directly from fast5 files or 
-simultaneously  from the MinION sequencing. For your convenience, add INSTALL_DIR/bin to your 
-PATH envirenment e.g., ::
+* *JLP*: points to where HDF libraries and JRI are installed (e.g, /usr/local/lib:/usr/lib/R/site-library/rJava/jri). The path to HDF is only needed for creating the pipelines to analyse directly from fast5 files or simultaneously  from the MinION sequencing. For your convenience, add INSTALL_DIR/bin to your PATH envirenment e.g., ::
 
    export PATH=~/.usr/local/bin:$PATH
 
