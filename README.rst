@@ -24,16 +24,15 @@ free-software dependencies are required:
 2. bwa >=7.10 (0.7.10-r858-dirty recommended)
 3. R with rJava and MultinomialCI installed
 4. kalign2 (http://msa.sbc.su.se/cgi-bin/msa.cgi)
-5. HDF5 (https://hdfgroup.org/HDF5/release/obtain5.html)
- -- optional, needed for translating native fast5 files to fastq
+5. HDF5 (https://hdfgroup.org/HDF5/release/obtain5.html) -- optional, needed for translating native fast5 files to fastq (npReader (https://github.com/mdcao/npReader).
  
 ++++++++++++++++++++++++ 
 Quick installation guide
 ++++++++++++++++++++++++ 
 ::
   git clone https://github.com/mdcao/japsa
-cd japsa
-make install \
+  cd japsa
+  make install \
    [INSTALL_DIR=~/.usr/local \]
    [MXMEM=7000m \]
    [SERVER=true \]
