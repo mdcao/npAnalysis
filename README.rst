@@ -61,7 +61,7 @@ Databases and data
 The analyses described in the paper require accessing to some pre-processed databases. We make avaibale these 
 databases on http://genomicsresearch.org/public/researcher/npAnalysis/ (and a backup storage 
 https://swift.rc.nectar.org.au:8888/v1/AUTH_15574c7fb24c44b3b34069185efba190/npAnalysis/).
-Setting up these databases for use as follows: 
+Setting up these databases for use as follows. You can choose to download the databases relevant to your desired analyese.
 
 --------------------------------
 Bacterial species identification
@@ -109,3 +109,20 @@ A database of antibiotic resistance gene obtained from resFinder (https://cge.cb
   wget https://swift.rc.nectar.org.au:8888/v1/AUTH_15574c7fb24c44b3b34069185efba190/npAnalysis/ResGene.tar.gz
   tar zxvf ResGene.tar.gz
   
+  
+======================================
+Setting up real-time analysis pipeline
+======================================
+
+The framework makes use of the interprocess communication mechanism pipe (https://en.wikipedia.org/wiki/Pipeline_(Unix)) as well as network channels to set up the real-time pipeline. You can prepare one or more analyses to run in real-time.
+
+
+
+
+
+
+
+
+
+
+
