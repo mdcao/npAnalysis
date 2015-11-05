@@ -138,7 +138,7 @@ For strain typing with MLST::
 
    jsa.util.streamServer -port 3458 \ 
      | bwa mem -t 8 -k11 -W20 -r10 -A1 -B1 -O1 -E1 -L0 -a -Y MLST/Klebsiella_pneumoniae/bwaIndex/genes.fasta - \
-     | jsa.np.rtMLST -bam - -mlst MLST/Klebsiella_pneumoniae/ -read 1000 -time 600  --out KpMLST.out &
+     | jsa.np.rtMLST -bam - -mlst MLST/Klebsiella_pneumoniae/ -read 1000 -time 600  --out KpMLST.dat &
 
 Again, you set up MLST for E. coli and/or S. aureus as well. However, due to high error rate of the current Oxford Nanopore sequencing, this analysis may require a large amount of data. The presence/absence analysis above is recommended.
 
@@ -205,6 +205,6 @@ and then stream our data through the pipeline, eg.,::
 
    wget https://swift.rc.nectar.org.au:8888/v1/AUTH_15574c7fb24c44b3b34069185efba190/npAnalysis/data.tar.gz
    tar zxvf data.tar.gz
-   
+   jsa.np.timeEmulate -input data/nGN_045_R7_X4S.fastq -scale 120 -output - |jsa.util.streamClient -input - -server  server1:port1,server2:port2,server3:port3
 
 
