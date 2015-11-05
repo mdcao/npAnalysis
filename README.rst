@@ -156,10 +156,21 @@ You can run these sub-pipeline on one computer (they have to listen on different
     | jsa.np.rtResistGenes -bam - -score=0.0001 -time 120 -read 50 --resDB  ResGene/resFinder/ -tmp _tmp_ -o resGene.dat -thread 4  2> resGene.log &
 
 and run bwa on another::
+
    jsa.util.streamServer -port 3461 \ 
     | bwa mem -t 2 -k11 -W20 -r10 -A1 -B1 -O1 -E1 -L0 -Y -K 10000 -a ResGene/resFinder/DB.fasta - 2> /dev/null \
     | jsa.util.streamClient -input - -server computer1:3460
 
 which listens for streaming data in fastq format from port 3461, aligns to the resistance gene database, and forwards the alignments in sam format the resistance gene analysis via the network.
 
+In these sub-pipelines, you may want to modify the parameter -port for  jsa.util.streamServer and -t for bwa to suit your computer systems.
 
+Once these `daemons <https://en.wikipedia.org/wiki/Daemon_(computing)>`_ are ready for their analyses, you can start npReader to streamline data into the integrated pipeline::
+
+   jsa.np.f5reader -GUI -realtime -folder <DownloadFolder> -fail -output data.fastq -stream server1:port1,server2:port2,server3:port3
+ 
+in which the -folder parameter specifies the downloads folder from the Metrichor base-calling, and the -stream parameter lists the computer addresses and port numbers that the analyses are listening on. At this point, you can start the MinION and Metrichor to start the real-time analyse.
+
+=======================
+Retro-realtime analysis
+=======================
