@@ -177,11 +177,28 @@ Retro-realtime analysis
 
 If your data have been sequenced, and depending on what processing steps have been done. 
 
-*If your data have not been base-cased, you can start the pipeline as above, and run Metrichor for base-calling your   data.
+* If your data have not been base-cased, you can start the pipeline as above, and run Metrichor for base-calling your   data.
 
-*If your data have been base-called, and are still in fast5 format, you can run npReader as above to stream data to    the pipeline.
+* If your data have been base-called, and are still in fast5 format, you can run npReader as above to stream data to    the pipeline.
 
-*If your data have been converted to fastq format, you can run jsa.util.streamClient to stream to the pipeline::
+* If your data have been converted to fastq format, you can run jsa.util.streamClient to stream to the pipeline::
 
-   jsa.util.streamClient -input reads.fastq -server server1:port1,server2:port2,server3:port3
+    jsa.util.streamClient -input reads.fastq -server server1:port1,server2:port2,server3:port3
   
+* If you want to emulate the timing of your sequenced data, first convert the data to fastq format and extract the timing information (make sure parameter -time is turned on)::
+
+  jsa.np.f5reader -folder <downloads> -fail -number -stat -time -out dataT.fastq
+  
+ Next sort the reads in the order they were generated::
+  
+  jsa.seq.sort -i dataT.fastq -o dataS.fastq --sortKey=timestamp
+  
+Finally, stream the data using jsa.np.timeEmulate::
+  
+  jsa.np.timeEmulate -input dataS.fastq -scale 1 -output - |jsa.util.streamClient -input - -server  server1:port1,server2:port2,server3:port3
+
+ You can crease the value in -scale to test higher throughput.
+
+We provides the data from our four MinION runs in fastq format, sorted in the order
+of sequencing (key=cTime). To re-run our analyses, set up the analysis pipeline as above,
+and then stream our data through the pipeline, eg.,
