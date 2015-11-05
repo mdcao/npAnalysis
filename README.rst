@@ -246,7 +246,7 @@ Data from the study
 ===================
 
 The MinION sequencing data for three K. pneumoniae samples have been deposited
-to ENA Accession PRJEB9295. The MinION sequencing of the mixture sample and the
+to ENA Accession `ERP010377<http://www.ebi.ac.uk/ena/data/view/ERP010377>`_. The MinION sequencing of the mixture sample and the
 MiSeq sequencing of all isolates are in the process to be uploaded. They can be
 obtained from
 http://genomicsresearch.org/public/researcher/npAnalysis/MinIONMixtureSample.tar.gz
