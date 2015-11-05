@@ -1,6 +1,6 @@
-=======================================================
+#######################################################
 Real-time analysis of Oxford Nanopore MinION sequencing
-=======================================================
+#######################################################
 
 
 This directory contains information for setting up real-time analysis
@@ -12,9 +12,9 @@ Minh Duc Cao, Devika Ganesamoorthy, Alysha Elliott, Huihui Zhang, Matthew Cooper
 
 bioRxiv doi: http://dx.doi.org/10.1101/019356
 
----------------------
+=====================
 Software installation
----------------------
+=====================
 
 The streamline agorithms and auxiliary programs for setting up the pipeline are provided 
 in japsa package (https://github.com/mdcao/japsa). In addition, the following 
@@ -26,9 +26,9 @@ free-software dependencies are required:
 4. kalign2 (http://msa.sbc.su.se/cgi-bin/msa.cgi)
 5. HDF5 (https://hdfgroup.org/HDF5/release/obtain5.html) -- optional, needed for translating native fast5 files to fastq (npReader (https://github.com/mdcao/npReader).
  
-++++++++++++++++++++++++ 
+------------------------
 Quick installation guide
-++++++++++++++++++++++++ 
+------------------------
 ::
 
    git clone https://github.com/mdcao/japsa
@@ -52,3 +52,7 @@ PATH envirenment e.g., ::
 
 For more detailed information for installing japsa, please refer to  Japsa installation guide on
 http://japsa.readthedocs.org/en/latest/install.html
+
+==================
+Databases and data
+==================
