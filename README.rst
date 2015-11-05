@@ -187,18 +187,24 @@ If your data have been sequenced, and depending on what processing steps have be
   
 * If you want to emulate the timing of your sequenced data, first convert the data to fastq format and extract the timing information (make sure parameter -time is turned on)::
 
-  jsa.np.f5reader -folder <downloads> -fail -number -stat -time -out dataT.fastq
+   jsa.np.f5reader -folder <downloads> -fail -number -stat -time -out dataT.fastq
   
- Next sort the reads in the order they were generated::
+Next sort the reads in the order they were generated::
   
-  jsa.seq.sort -i dataT.fastq -o dataS.fastq --sortKey=timestamp
+   jsa.seq.sort -i dataT.fastq -o dataS.fastq --sortKey=timestamp
   
 Finally, stream the data using jsa.np.timeEmulate::
   
-  jsa.np.timeEmulate -input dataS.fastq -scale 1 -output - |jsa.util.streamClient -input - -server  server1:port1,server2:port2,server3:port3
+   jsa.np.timeEmulate -input dataS.fastq -scale 1 -output - |jsa.util.streamClient -input - -server  server1:port1,server2:port2,server3:port3
 
- You can crease the value in -scale to test higher throughput.
+You can crease the value in -scale to test higher throughput.
 
 We provides the data from our four MinION runs in fastq format, sorted in the order
 of sequencing (key=cTime). To re-run our analyses, set up the analysis pipeline as above,
-and then stream our data through the pipeline, eg.,
+and then stream our data through the pipeline, eg.,::
+
+   wget https://swift.rc.nectar.org.au:8888/v1/AUTH_15574c7fb24c44b3b34069185efba190/npAnalysis/data.tar.gz
+   tar zxvf data.tar.gz
+   
+
+
