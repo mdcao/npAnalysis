@@ -177,9 +177,9 @@ Retro-realtime analysis
 
 If your data have been sequenced, and depending on what processing steps have been done. 
 
-  If your data have not been base-cased, you can start the pipeline as above, and run Metrichor for base-calling your   data.
+* If your data have not been base-cased, you can start the pipeline as above, and run Metrichor for base-calling your   data.
 
-  If your data have been base-called, and are still in fast5 format, you can run npReader as above to stream data to    the pipeline.
+* If your data have been base-called, and are still in fast5 format, you can run npReader as above to stream data to    the pipeline.
 
   If your data have been converted to fastq format, you can run jsa.util.streamClient to stream to the pipeline::
 
