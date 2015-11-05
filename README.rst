@@ -99,7 +99,7 @@ S. aureus can be obtained as follows::
 
   wget https://swift.rc.nectar.org.au:8888/v1/AUTH_15574c7fb24c44b3b34069185efba190/npAnalysis/StrainTyping.tar.gz
   tar zxvf StrainTyping.tar.gz
-  
+
 ------------------------------  
 Resistance gene identification
 ------------------------------
