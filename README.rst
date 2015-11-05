@@ -114,7 +114,7 @@ A database of antibiotic resistance gene obtained from resFinder (https://cge.cb
 Setting up real-time analysis pipeline
 ======================================
 
-The framework makes use of the interprocess communication mechanism pipe (https://en.wikipedia.org/wiki/Pipeline_(Unix)) as well as network channels to set up the real-time pipeline. You can prepare one or more analyses to run in real-time.
+The framework makes use of the interprocess communication mechanism pipe (https://en.wikipedia.org/wiki/Pipeline_(Unix) ) as well as network channels to set up the real-time pipeline. You can prepare one or more analyses to run in real-time.
 
 
 
