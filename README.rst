@@ -214,8 +214,13 @@ Further documentations
 More details of usage of the discussed programs are provided in `ReadTheDocs for Japsa <https://readthedocs.org/projects/japsa/>`_. More specificially:
 
 * `npReader <http://japsa.readthedocs.org/en/latest/tools/jsa.np.f5reader.html>`_
-
-
+* `jsa.util.streamServer <http://japsa.readthedocs.org/en/latest/tools/jsa.util.streamServer.html>`_
+* `jsa.util.streamClient <http://japsa.readthedocs.org/en/latest/tools/jsa.util.streamClient.html>`_
+* `jsa.np.filter <http://japsa.readthedocs.org/en/latest/tools/jsa.np.filter.html>`_
+* jsa.np.rtSpeciesTyping -- to be documented
+* `jsa.np.rtStrainTyping <http://japsa.readthedocs.org/en/latest/tools/jsa.np.rtStrainTyping.html>`_
+* jsa.np.rtMLST -- to be documented
+* jsa.np.rtResGen -- to be documented
 
 =======
 Contact
