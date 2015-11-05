@@ -40,6 +40,8 @@ Quick installation guide
      [SERVER=true \]
      [JLP=/usr/lib/jni:/usr/lib/R/site-library/rJava/jri]
 
+(Note: the directives in squared brackets are optional, remove the brackets if you use those).
+
 This will install japsa according the directives:
 
 * *INSTALL_DIR*: specifies the directory to install japsa, make sure you have write permission to this directory
