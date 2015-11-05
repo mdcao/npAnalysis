@@ -207,4 +207,21 @@ and then stream our data through the pipeline, eg.,::
    tar zxvf data.tar.gz
    jsa.np.timeEmulate -input data/nGN_045_R7_X4S.fastq -scale 120 -output - |jsa.util.streamClient -input - -server  server1:port1,server2:port2,server3:port3
 
+======================
+Further documentations
+======================
+
+More details of usage of the discussed programs are provided in `ReadTheDocs for Japsa <https://readthedocs.org/projects/japsa/>`_. More specificially:
+
+* `npReader <http://japsa.readthedocs.org/en/latest/tools/jsa.np.f5reader.html>`_
+
+
+
+=======
+Contact
+=======
+Minh Duc Cao -- m.cao1@uq.edu.au
+
+
+
 
