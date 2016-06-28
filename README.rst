@@ -60,8 +60,7 @@ Databases and data
 ==================
 
 The analyses described in the paper require accessing to some pre-processed databases. We make avaibale these
-databases on http://genomicsresearch.org/public/researcher/npAnalysis/ (and a backup storage
-https://swift.rc.nectar.org.au:8888/v1/AUTH_15574c7fb24c44b3b34069185efba190/npAnalysis/).
+databases on  http://data.genomicsresearch.org/Projects/npAnalysis/ 
 Setting up these databases for use as follows. You can choose to download the databases relevant to your desired analyese.
 
 --------------------------------
@@ -105,12 +104,12 @@ We pre-compile the database of all bacterial genomes obtained from NCBI genbank,
 addition of two K. quasipneumoniae strains (to be updated in the manuscript). Download the
 database (~2.8GB), and make an bwa index of the database as follows.::
 
-   wget https://swift.rc.nectar.org.au:8888/v1/AUTH_15574c7fb24c44b3b34069185efba190/npAnalysis/SpeciesTyping.tar.gz
+   wget http://data.genomicsreserch.org/Projects/npAnalysis/SpeciesTyping.tar.gz
    tar zxvf SpeciesTyping.tar.gz
    gunzip SpeciesTyping/Bacteria/genomeDB.fasta.gz
    bwa index SpeciesTyping/Bacteria/genomeDB.fasta
 
-Note that it might take a while to build the bwa index for this 9G-base database.
+Note that it might take a while to build the bwa index for this 9Gb database.
 
 -----------------------
 Strain typing with MLST
@@ -120,7 +119,7 @@ Strain typing with MLST
 The database for MLST typing for three species,  K. pneumoniae, E. coli and
 S. aureus are make avaibale. Download (208KB) and unzip them::
 
-   wget https://swift.rc.nectar.org.au:8888/v1/AUTH_15574c7fb24c44b3b34069185efba190/npAnalysis/MLST.tar.gz
+   wget http://data.genomicsreserch.org/Projects/npAnalysis/MLST.tar.gz
    tar zxvf MLST.tar.gz
 
 
@@ -131,7 +130,7 @@ Strain typing with gene presence and absence
 The database for gene presence and absence strain typing for K. pneumoniae, E. coli and
 S. aureus can be obtained as follows::
 
-  wget https://swift.rc.nectar.org.au:8888/v1/AUTH_15574c7fb24c44b3b34069185efba190/npAnalysis/StrainTyping.tar.gz
+  wget http://data.genomicsreserch.org/Projects/npAnalysis/StrainTyping.tar.gz
   tar zxvf StrainTyping.tar.gz
 
 ------------------------------
@@ -140,7 +139,7 @@ Resistance gene identification
 
 A database of antibiotic resistance gene obtained from resFinder (https://cge.cbs.dtu.dk/services/ResFinder/) and pre-processed and provided from::
 
-  wget https://swift.rc.nectar.org.au:8888/v1/AUTH_15574c7fb24c44b3b34069185efba190/npAnalysis/ResGene.tar.gz
+  wget http://data.genomicsreserch.org/Projects/npAnalysis/ResGene.tar.gz
   tar zxvf ResGene.tar.gz
 
 
@@ -166,7 +165,7 @@ For strain typing gene presence/absense for K. pneumoniae::
      | jsa.np.rtStrainTyping -bam -  -geneDB StrainTyping/Klebsiella_pneumoniae/ -read 0 -time 20 --out kPStrainTyping.dat 2>  kPStrainTyping.log &
 
 You can run strain typing pipelines for other species (e.g., E. coli and S. aureus)
-if you have reason to believe the sample may contain these species. If these pipeline
+if you have reasons to believe the sample may contain these species. If these pipeline
 run on the same computer, make sure they listen to different ports.
 
 For strain typing with MLST::
@@ -175,7 +174,8 @@ For strain typing with MLST::
      | bwa mem -t 8 -k11 -W20 -r10 -A1 -B1 -O1 -E1 -L0 -a -Y MLST/Klebsiella_pneumoniae/bwaIndex/genes.fasta - \
      | jsa.np.rtMLST -bam - -mlst MLST/Klebsiella_pneumoniae/ -read 1000 -time 600  --out KpMLST.dat &
 
-Again, you set up MLST for E. coli and/or S. aureus as well. However, due to high error rate of the current Oxford Nanopore sequencing, this analysis may require a large amount of data. The presence/absence analysis above is recommended.
+Again, you can set up MLST for E. coli and/or S. aureus as well. However, due to high error rate of the current 
+Oxford Nanopore sequencing, this analysis may require a large amount of data. The presence/absence analysis above is recommended.
 
 
 For resistance gene identification::
@@ -238,7 +238,7 @@ We provides the data from our four MinION runs in fastq format, sorted in the or
 of sequencing (key=cTime). To re-run our analyses, set up the analysis pipeline as above,
 and then stream our data through the pipeline, eg.,::
 
-   wget https://swift.rc.nectar.org.au:8888/v1/AUTH_15574c7fb24c44b3b34069185efba190/npAnalysis/data.tar.gz
+   wget http://data.genomicsresearch.org/Projects/npAnalysis/data.tar.gz
    tar zxvf data.tar.gz
    jsa.np.timeEmulate -input data/nGN_045_R7_X4S.fastq -scale 120 -output - |jsa.util.streamClient -input - -server  server1:port1,server2:port2,server3:port3
 
@@ -248,12 +248,6 @@ Data from the study
 
 The MinION sequencing data for three K. pneumoniae samples have been deposited
 to ENA Accession `ERP010377 <http://www.ebi.ac.uk/ena/data/view/ERP010377>`_.
-The MinION sequencing of the mixture sample and the
-MiSeq sequencing of all isolates are in the process to be uploaded. They can be
-obtained from
-http://genomicsresearch.org/public/researcher/npAnalysis/MinIONMixtureSample.tar.gz
-and http://genomicsresearch.org/public/researcher/npAnalysis/MiSeqSequencing.tar.gz
-for the time being.
 
 
 ======================
