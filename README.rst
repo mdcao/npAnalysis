@@ -104,7 +104,7 @@ We pre-compile the database of all bacterial genomes obtained from NCBI genbank,
 addition of two K. quasipneumoniae strains (to be updated in the manuscript). Download the
 database (~2.8GB), and make an bwa index of the database as follows.::
 
-   wget http://data.genomicsreserch.org/Projects/npAnalysis/SpeciesTyping.tar.gz
+   wget http://data.genomicsresearch.org/Projects/npAnalysis/SpeciesTyping.tar.gz
    tar zxvf SpeciesTyping.tar.gz
    gunzip SpeciesTyping/Bacteria/genomeDB.fasta.gz
    bwa index SpeciesTyping/Bacteria/genomeDB.fasta
@@ -119,7 +119,7 @@ Strain typing with MLST
 The database for MLST typing for three species,  K. pneumoniae, E. coli and
 S. aureus are make avaibale. Download (208KB) and unzip them::
 
-   wget http://data.genomicsreserch.org/Projects/npAnalysis/MLST.tar.gz
+   wget http://data.genomicsresearch.org/Projects/npAnalysis/MLST.tar.gz
    tar zxvf MLST.tar.gz
 
 
@@ -130,7 +130,7 @@ Strain typing with gene presence and absence
 The database for gene presence and absence strain typing for K. pneumoniae, E. coli and
 S. aureus can be obtained as follows::
 
-  wget http://data.genomicsreserch.org/Projects/npAnalysis/StrainTyping.tar.gz
+  wget http://data.genomicsresearch.org/Projects/npAnalysis/StrainTyping.tar.gz
   tar zxvf StrainTyping.tar.gz
 
 ------------------------------
@@ -139,7 +139,7 @@ Resistance gene identification
 
 A database of antibiotic resistance gene obtained from resFinder (https://cge.cbs.dtu.dk/services/ResFinder/) and pre-processed and provided from::
 
-  wget http://data.genomicsreserch.org/Projects/npAnalysis/ResGene.tar.gz
+  wget http://data.genomicsresearch.org/Projects/npAnalysis/ResGene.tar.gz
   tar zxvf ResGene.tar.gz
 
 
