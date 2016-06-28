@@ -246,8 +246,8 @@ and then stream our data through the pipeline, eg.,::
 Data from the study
 ===================
 
-The MinION sequencing data for three K. pneumoniae samples have been deposited
-to ENA Accession `ERP010377 <http://www.ebi.ac.uk/ena/data/view/ERP010377>`_.
+The sequencing data for the experiments in the paper have been deposited
+to ENA under Accession `PRJEB14532 <http://www.ebi.ac.uk/ena/data/view/PRJEB14532>`_.
 
 
 ======================
@@ -262,8 +262,8 @@ More details of usage of the discussed programs are provided in `ReadTheDocs for
 * `jsa.np.filter <http://japsa.readthedocs.org/en/latest/tools/jsa.np.filter.html>`_
 * `jsa.np.rtSpeciesTyping <http://japsa.readthedocs.org/en/latest/tools/jsa.np.rtSpeciesTyping.html>`_
 * `jsa.np.rtStrainTyping <http://japsa.readthedocs.org/en/latest/tools/jsa.np.rtStrainTyping.html>`_
-* jsa.np.rtMLST -- to be documented
-* jsa.np.rtResistGene -- to be documented
+* `jsa.np.rtMLST <http://japsa.readthedocs.org/en/latest/tools/jsa.np.rtMLST.html>`_
+* `jsa.np.rtResistGene <http://japsa.readthedocs.org/en/latest/tools/jsa.np.rtResistGene.html>`_
 
 =======
 Contact
