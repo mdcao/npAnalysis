@@ -60,7 +60,7 @@ Databases and data
 ==================
 
 The analyses described in the paper require accessing to some pre-processed databases. We make avaibale these
-databases on  http://data.genomicsresearch.org/Projects/npAnalysis/ 
+databases on  http://data.genomicsresearch.org/Projects/npAnalysis/ (and a back up storage at https://swift.rc.nectar.org.au:8888/v1/AUTH_15574c7fb24c44b3b34069185efba190/npAnalysis/)
 Setting up these databases for use as follows. You can choose to download the databases relevant to your desired analyese.
 
 --------------------------------
