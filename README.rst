@@ -10,9 +10,8 @@ of Oxford Nanopore sequencing data, as described in the paper:
 Streaming algorithms to identify pathogens and antibiotic
 resistance potential from real-time MinION sequencing
 
-Minh Duc Cao, Devika Ganesamoorthy, Alysha Elliott, Huihui Zhang, Matthew Cooper, Lachlan Coin
+Cao, M. D., Ganesamoorthy, D., Elliott, A. G., Zhang, H., Cooper, M. A., & Coin, L. J. M. (2016). Streaming algorithms for identification of pathogens and antibiotic resistance potential from real-time MinIONTM sequencing. GigaScience, 5(1), 32. http://doi.org/10.1186/s13742-016-0137-2
 
-(To appear in GigaScience, a preprint of the article can be found on bioRxiv server at doi: http://dx.doi.org/10.1101/019356)
 
 =====================
 Software installation
@@ -202,13 +201,15 @@ In these sub-pipelines, you may want to modify the parameter -port for  jsa.util
 
 Once these `daemons <https://en.wikipedia.org/wiki/Daemon_(computing)>`_ are ready for their analyses, you can start npReader to streamline data into the integrated pipeline::
 
-   jsa.np.f5reader -GUI -realtime -folder <DownloadFolder> -fail -output data.fastq -stream server1:port1,server2:port2,server3:port3
+   jsa.np.npreader -GUI -realtime -folder <DownloadFolder> -fail -output data.fastq -stream server1:port1,server2:port2,server3:port3
  
 in which the -folder parameter specifies the downloads folder from the Metrichor base-calling, and the -stream parameter lists the computer addresses and port numbers that the analyses are listening on. At this point, you can start the MinION and Metrichor to start the real-time analyse.
 
 =======================
 Retro-realtime analysis
 =======================
+
+Note npreader no longer support extracting time information. Please use an earlier version for this.
 
 If your data have been sequenced, and depending on what processing steps have been done.
 
@@ -222,7 +223,7 @@ If your data have been sequenced, and depending on what processing steps have be
   
 * If you want to emulate the timing of your sequenced data, first convert the data to fastq format and extract the timing information (make sure parameter -time is turned on)::
 
-   jsa.np.f5reader -folder <downloads> -fail -number -stat -time -out dataT.fastq
+   jsa.np.npreader -folder <downloads> -fail -number -stat -time -out dataT.fastq
   
 Next sort the reads in the order they were generated::
   
@@ -256,7 +257,7 @@ Further documentations
 
 More details of usage of the discussed programs are provided in `ReadTheDocs for Japsa <http://japsa.readthedocs.org/en/latest/>`_. More specificially:
 
-* `npReader <http://japsa.readthedocs.org/en/latest/tools/jsa.np.f5reader.html>`_
+* `npReader <http://japsa.readthedocs.org/en/latest/tools/jsa.np.npreader.html>`_
 * `jsa.util.streamServer <http://japsa.readthedocs.org/en/latest/tools/jsa.util.streamServer.html>`_
 * `jsa.util.streamClient <http://japsa.readthedocs.org/en/latest/tools/jsa.util.streamClient.html>`_
 * `jsa.np.filter <http://japsa.readthedocs.org/en/latest/tools/jsa.np.filter.html>`_
