@@ -21,11 +21,10 @@ The streamline agorithms and auxiliary programs for setting up the pipeline are 
 in japsa package (https://github.com/mdcao/japsa). In addition, the following
 free-software dependencies are required:
 
-1. Java >=1.7
+1. Java >=1.8
 2. bwa >=7.10 (0.7.10-r858-dirty recommended)
-3. R with rJava and MultinomialCI installed
-4. kalign2 (http://msa.sbc.su.se/cgi-bin/msa.cgi)
-5. HDF5 (https://hdfgroup.org/HDF5/release/obtain5.html) -- optional, needed for translating native fast5 files to fastq (npReader (https://github.com/mdcao/npReader).
+3. kalign2 (http://msa.sbc.su.se/cgi-bin/msa.cgi)
+4. HDF5 (https://hdfgroup.org/HDF5/release/obtain5.html) -- optional, needed for translating native fast5 files to fastq (npReader (https://github.com/mdcao/npReader).
 
 ------------------------
 Quick installation guide
@@ -47,7 +46,7 @@ This will install japsa according the directives:
 * *INSTALL_DIR*: specifies the directory to install japsa, make sure you have write permission to this directory
 * *MXMEM*: specifies the default memory allocated to the java virtual machine
 * *SERVER*: specifies whether to launch the java virtual machine in server mode
-* *JLP*: points to where HDF libraries and JRI are installed (e.g, /usr/local/lib:/usr/lib/R/site-library/rJava/jri). The path to HDF is only needed for creating the pipelines to analyse directly from fast5 files or simultaneously  from the MinION sequencing. For your convenience, add INSTALL_DIR/bin to your PATH envirenment e.g.,::
+* *JLP*: points to where HDF libraries are installed (e.g, /usr/local/lib). The path to HDF is only needed for creating the pipelines to analyse directly from fast5 files or simultaneously  from the MinION sequencing. For your convenience, add INSTALL_DIR/bin to your PATH envirenment e.g.,::
 
    export PATH=~/.usr/local/bin:$PATH
 
